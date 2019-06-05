@@ -13,6 +13,7 @@ import (
 var o orm.Ormer
 
 func init() {
+	beego.SetLogger("file", `{"filename":"logs/proje.log"}`)
 	cleanDb := beego.AppConfig.DefaultBool("CleanDB", false)
 	dbName := beego.AppConfig.DefaultString("DBName", "asd")
 	NewDb(dbName, cleanDb)
