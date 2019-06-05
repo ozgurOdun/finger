@@ -7,6 +7,7 @@ import (
 
 type Finger struct {
 	Id                        int       `orm:"pk,auto"`
+	Cookie                    string    `orm:"Identifier"`
 	Created                   time.Time `orm:"auto_now_add;type(datetime)"`
 	ProcessTime               string    `form:"time"`
 	Hash                      string    `form:"hash"`

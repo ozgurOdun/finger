@@ -27,10 +27,14 @@ func (c *MainController) Record() {
 		if err := c.ParseForm(&f); err != nil {
 			fmt.Println(err)
 		}
+		cookie := c.Ctx.Input.Cookie("Identifier")
+		fmt.Println("cookie:", cookie)
+		f.Cookie = cookie
 		fmt.Println(o.Insert(&f))
 	}
 	c.Redirect("/thanks", 302)
 }
+
 func (c *MainController) Thanks() {
 	c.TplName = "thanks.tpl"
 }

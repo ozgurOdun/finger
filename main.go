@@ -56,5 +56,9 @@ func NewDb(name string, cleanDb bool) {
 }
 
 func main() {
+	beego.BConfig.WebConfig.Session.SessionOn = true
+	beego.BConfig.WebConfig.Session.SessionName = "Identifier"
+	beego.BConfig.WebConfig.Session.SessionCookieLifeTime = 311040000
+
 	beego.Run()
 }
